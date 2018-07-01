@@ -1,0 +1,32 @@
+version: 1
+disable_existing_loggers: False
+encoding: utf-8
+formatters:
+    simple:
+        format: "[%(asctime)s]-[%(levelname)s|%(filename)s:%(lineno)s]-[%(message)s]"
+        datefmt: '%Y-%m-%d %H:%M:%S'
+        # "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        # 2017-09-28 01:30:06,025 - HNet - INFO - predict !!!!
+        # 2017-09-28 01:30:06,028 - root - ERROR - Exception calling application: 'list' object has no attribute 'copy'
+handlers:
+    console:
+        class: logging.StreamHandler
+        level: INFO
+        formatter: simple
+        stream: ext://sys.stdout
+    logfile:
+        class: logging.handlers.TimedRotatingFileHandler
+        level: DEBUG
+        formatter: simple
+        when: D
+        filename: /logs/SMR-KAKAO/smr.log
+        backupCount: 10
+loggers:
+    smr:
+        handlers: [logfile, console]
+        level: DEBUG
+        propagate: False # Added
+
+root:
+    level: DEBUG
+    handlers: [console, logfile]

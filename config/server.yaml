@@ -1,0 +1,13 @@
+SERVER_PORT : '3000' # 포트
+
+# YOLO_URL: 'http://localhost:6000/yolo' # 이미지 처리 서버(YOLO)
+# DENSE_CAP_URL: 'http://localhost:6000/dense_cap' # 이미지 처리 서버(DENSE_CAP)
+# SMR_KAKAO_SERVER_URL: 'http://147.46.219.124:32776' # 현재 서버 URL(32776->3000 컨테이너 내부에서 3000번이 32776으로 포트포워딩 뒤어 있음)
+
+YOLO_URL: 'http://147.46.219.124:32773/yolo' # 이미지 처리 서버(YOLO)
+DENSE_CAP_URL: 'http://147.46.219.124:32773/dense_cap' # 이미지 처리 서버(DENSE_CAP)
+SMR_KAKAO_SERVER_URL: 'http://147.46.219.124:32839' # 현재 서버 URL(32776->3000 컨테이너 내부에서 3000번이 32776으로 포트포워딩 뒤어 있음)
+
+
+GOOGLE_TRANSLATE_URL: 'https://translation.googleapis.com/language/translate/v2' # 구글 번역 
+GOOGLE_API_KEY: 'AIzaSyDKCKI7D_xHefDEOOH5Hvk58-EsUWL8VJk' # bhkim account
